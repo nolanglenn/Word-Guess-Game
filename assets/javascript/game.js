@@ -84,13 +84,13 @@ function gameRestart(word) {
     var index = wordList.indexOf(word);
     //If they ran out of guesses, show word and randomize a new one
     if((numberOfGuesses <= 0)) {
-        alert('You lose! Press ok to try another word.');
+        alert('You lose! The word was ' + randomWord + '. Press ok to try another word.');
         wordList.splice(index, 1);
         randomWord = getNewWord();
 
     } else if(!blanks.includes('_')) {
         winCount++
-        alert('You win! Press ok to play again.')
+        alert('You win! Press ok to play again.');
         wordList.splice(index, 1);
         document.getElementById('wins').innerHTML = 'Wins: ' + winCount;
         randomWord = getNewWord();
